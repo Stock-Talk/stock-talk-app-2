@@ -6,9 +6,11 @@ import './App.css';
 
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
+import UserHome from './pages/UserHome'; // Will be deleted
+import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Profile from './pages/Profile';
+import About from './pages/About';
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/about' component={About} />
+        {/* to remove and combine with Home */}
+        <Route exact path='/myhome' component={UserHome} />
       </Container>
     </Router>
   );

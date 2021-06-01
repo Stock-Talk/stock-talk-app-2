@@ -27,9 +27,19 @@ function Navigation() {
             className='ui avatar image'
             style={{ marginTop: 15 }}
             src={Logo}
-            alt='appl-logo'
+            alt='app-logo'
           />
         </Menu.Item>
+
+        {/* TODO: combine with home logic to display as HOME when user is logged in*/}
+        <Menu.Item
+          className='nav-link'
+          name='MyHome'
+          active={activeItem === 'userhome'}
+          onClick={handleItemClick}
+          as={Link}
+          to='/myhome'
+        ></Menu.Item>
 
         <Menu.Item
           className='nav-link'
@@ -39,6 +49,7 @@ function Navigation() {
           as={Link}
           to='/profile'
         />
+        {/* TODO  - change to logout and set path to HOME when user is logged in */}
         <Menu.Menu position='right'>
           <Menu.Item
             className='nav-link'
@@ -55,6 +66,16 @@ function Navigation() {
             onClick={handleItemClick}
             as={Link}
             to='/register'
+          />
+
+          {/* TODO: hide when user is logged in */}
+          <Menu.Item
+            className='nav-link'
+            name='about'
+            active={activeItem === 'about'}
+            onClick={handleItemClick}
+            as={Link}
+            to='/about'
           />
         </Menu.Menu>
       </Menu>
