@@ -9,29 +9,43 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+
+// NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT
+// import { useMutation } from '@apollo/react-hooks';
+// import Auth from "../utils/auth";
+// import { ADD_USER } from "../utils/mutations";
+
 import './Register.css';
 import Logo from '../images/Logo.png';
-function Register() {
-  // Record what the user is typing in to the inputs
-  // Record those inputs in state
+
+function Register(props) {
   const [user, setUser] = useState({
     email: '',
     username: '',
     password: '',
     confirmPassword: '',
   });
+  // const [addUser] = useMutation(ADD_USER);
 
-  const register = (e) => {
-    e.preventDefault();
-    console.log('submitting form..', user);
-    // We want to make an HTTP request to the backend to register this user
-    // TODO: What route do we need to hit in order to register a user?
-    fetch('', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        username: user.username,
+        email: user.email,
+        password: user.password,
+        confirmPassword: user.confirmPassword,
       },
-      body: JSON.stringify(user),
+    });
+    // const token = mutationResponse.data.addUser.token;
+    // Auth.login(token);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
     });
   };
 
@@ -47,37 +61,39 @@ function Register() {
               fluid
               icon='user'
               iconPosition='left'
+              name='username'
               placeholder='Username'
               value={user.username}
-              onChange={(e) => setUser({ ...user, username: e.target.value })}
+              onChange={handleChange}
             />
             <Form.Input
               fluid
               icon='user'
               iconPosition='left'
+              name='email'
               placeholder='E-mail address'
               value={user.email}
-              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              onChange={handleChange}
             />
             <Form.Input
               fluid
               icon='lock'
               iconPosition='left'
+              name='password'
               placeholder='Password'
               type='password'
               value={user.password}
-              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              onChange={handleChange}
             />
             <Form.Input
               fluid
               icon='lock'
               iconPosition='left'
+              name='confirmpassword'
               placeholder='Confirm Password'
               type='password'
               value={user.confirmPassword}
-              onChange={(e) =>
-                setUser({ ...user, confirmPassword: e.target.value })
-              }
+              onChange={handleChange}
             />
 
             <Button color='teal' fluid size='large' id='registerbtn'>
