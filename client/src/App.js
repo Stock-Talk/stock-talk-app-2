@@ -11,13 +11,15 @@ import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import About from './pages/About';
+import Main from './pages/Main';
 
 function App() {
   return (
     <Router>
       <Container>
         <Navigation />
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={Main} />
+        <Route exact path='/home' component={Home} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
