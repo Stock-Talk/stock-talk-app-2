@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Logo from '../images/Logo.png';
-import e from 'express';
 
 function Navigation() {
   // set page pathname
@@ -18,22 +17,6 @@ function Navigation() {
     return (
       <div>
         <Menu pointing secondary size='large' color='red'>
-          <Menu.Item
-            className='nav-link'
-            name='home'
-            active={activeItem === 'home'}
-            onClick={handleItemClick}
-            as={Link}
-            to='/'
-          >
-            <img
-              className='ui avatar image'
-              style={{ marginTop: 15 }}
-              src={Logo}
-              alt='app-logo'
-            />
-          </Menu.Item>
-
           <Menu.Menu position='right'>
             <Menu.Item
               className='nav-link'
@@ -51,15 +34,6 @@ function Navigation() {
               onClick={handleItemClick}
               as={Link}
               to='/register'
-            />
-
-            <Menu.Item
-              className='nav-link'
-              name='about'
-              active={activeItem === 'about'}
-              onClick={handleItemClick}
-              as={Link}
-              to='/about'
             />
           </Menu.Menu>
         </Menu>
@@ -95,7 +69,7 @@ function Navigation() {
           as={Link}
           to='/profile'
         />
-        {/* set to home without authentication */}
+        {/* set to main home without authentication */}
         <Menu.Menu position='right'>
           <Menu.Item
             className='nav-link'
