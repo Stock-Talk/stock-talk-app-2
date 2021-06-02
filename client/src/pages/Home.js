@@ -1,15 +1,17 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import PostFeed from '../components/PostFeed';
+import Nav from '../components/Nav';
 
 //////////// TODO:
-//         this need to be RETURNED in the Home page WHEN USER IS LOGGED IN
+
 //         need to display all user posts... see PostFeed.js Component
 
 function Home() {
-  // if user is logged in
-  if (true) {
-    return (
+  // if user is logged in display this
+  return (
+    <div>
+      <Nav />
       <Grid celled stackable centered>
         <h2>Recent Posts</h2>
         <Grid.Row>
@@ -32,12 +34,8 @@ function Home() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    );
-  } else {
-    // return if user is logged out
-    // this will be jose's home page
-    return <div>main home</div>;
-  }
+    </div>
+  );
 }
 
 export default Home;

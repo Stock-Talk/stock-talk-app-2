@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Image, Message } from 'semantic-ui-react';
 import { Redirect, useParams } from 'react-router-dom';
+import Nav from '../components/Nav';
 ////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
 
 import PostFeed from '../components/PostFeed';
@@ -49,31 +50,34 @@ const Profile = (props) => {
   // };
 
   return (
-    <Grid celled stackable centered>
-      {/* Viewing {userParam ? `${user.username}'s` : 'your'} profile. */}
-      <h2>Your Profile</h2>
-      <Grid.Row>
-        <Grid.Column className='top-left' width={3}>
-          {/* <RecentActivity /> */}
-          recent activity
-        </Grid.Column>
-        <Grid.Column className='center-top' width={3}>
-          <PostForm />
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column className='bottom-left' width={3}></Grid.Column>
-        <Grid.Column className='center-bottom' width={10}>
-          {/* PostFeed for all my posts */}
-          <PostFeed />
-        </Grid.Column>
-        <Grid.Column className='bottom-right' width={3}>
-          {/* import friends list here - comment out while i work on component  */}
-          {/* <FriendList /> */}
-          Friends/Team members (what's the min?)
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+    <div>
+      <Nav />
+      <Grid celled stackable centered>
+        {/* Viewing {userParam ? `${user.username}'s` : 'your'} profile. */}
+        <h2>Your Profile</h2>
+        <Grid.Row>
+          <Grid.Column className='top-left' width={3}>
+            {/* <RecentActivity /> */}
+            recent activity
+          </Grid.Column>
+          <Grid.Column className='center-top' width={3}>
+            <PostForm />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column className='bottom-left' width={3}></Grid.Column>
+          <Grid.Column className='center-bottom' width={10}>
+            {/* PostFeed for all my posts */}
+            <PostFeed />
+          </Grid.Column>
+          <Grid.Column className='bottom-right' width={3}>
+            {/* import friends list here - comment out while i work on component  */}
+            {/* <FriendList /> */}
+            Friends/Team members (what's the min?)
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </div>
   );
 };
 
