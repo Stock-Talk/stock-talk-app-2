@@ -2,6 +2,8 @@ import React from 'react';
 import './Main.css'
 import Mainpage from '../images/Mainpage.png'
 import { Image } from 'semantic-ui-react'
+import { Image, Reveal } from 'semantic-ui-react'
+
 
 const Main = () => (
     <Image
