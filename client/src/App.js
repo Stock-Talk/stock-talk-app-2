@@ -14,7 +14,7 @@ import Main from './pages/Main';
 function App() {
   return (
     <Router>
-      <Container style={{ marginTop: 10 }}>
+      <Container>
         <Route exact path='/' component={Main} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/profile' component={Profile} />

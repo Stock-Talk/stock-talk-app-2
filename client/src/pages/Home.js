@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import PostFeed from '../components/PostFeed';
-import Nav from '../components/Nav';
+import Nav from '../components/UserNav';
 
 //////////// TODO:
 

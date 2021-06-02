@@ -9,14 +9,14 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
-// import { useMutation } from '@apollo/react-hooks';
-// import { Link } from "react-router-dom";
-// import { LOGIN } from "../utils/mutations"
-// import Auth from "../utils/auth";
-
+import Nav from '../components/Nav';
 import './Login.css';
 import Logo from '../images/Logo.png';
+
+////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
+// import { useMutation } from '@apollo/react-hooks';
+// import { LOGIN } from "../utils/mutations"
+// import Auth from "../utils/auth";
 
 function Login() {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -42,50 +42,57 @@ function Login() {
   };
 
   return (
-    <Grid textAlign='center' style={{ height: '70vh' }} verticalAlign='middle'>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center' id='loginheader'>
-          <Image src={Logo} /> Log-in to your account
-        </Header>
+    <div>
+      <Nav />
+      <Grid
+        textAlign='center'
+        style={{ height: '70vh' }}
+        verticalAlign='middle'
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as='h2' color='teal' textAlign='center' id='loginheader'>
+            <Image src={Logo} /> Log-in to your account
+          </Header>
 
-        <Form size='large' onSubmit={handleFormSubmit}>
-          <Segment stacked>
-            <Form.Input
-              fluid
-              icon='user'
-              iconPosition='left'
-              placeholder='Username'
-              name='username'
-              type='text'
-              onChange={handleChange}
-            />
-            <Form.Input
-              fluid
-              icon='lock'
-              iconPosition='left'
-              placeholder='Password'
-              name='password'
-              type='password'
-              onChange={handleChange}
-            />
+          <Form size='large' onSubmit={handleFormSubmit}>
+            <Segment stacked>
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
+                placeholder='Username'
+                name='username'
+                type='text'
+                onChange={handleChange}
+              />
+              <Form.Input
+                fluid
+                icon='lock'
+                iconPosition='left'
+                placeholder='Password'
+                name='password'
+                type='password'
+                onChange={handleChange}
+              />
 
-            <Button color='teal' fluid size='large' id='loginbutton'>
-              Login
-            </Button>
-          </Segment>
-        </Form>
+              <Button color='teal' fluid size='large' id='loginbutton'>
+                Login
+              </Button>
+            </Segment>
+          </Form>
 
-        <Message>
-          New to us? <Link to='/register'>Sign Up</Link>
-        </Message>
+          <Message>
+            New to us? <Link to='/register'>Sign Up</Link>
+          </Message>
 
-        {/* {error ? (
+          {/* {error ? (
           <Message className='error-message'>
             Please make sure username and password valid.
           </Message>
         ) : null} */}
-      </Grid.Column>
-    </Grid>
+        </Grid.Column>
+      </Grid>
+    </div>
   );
 }
 

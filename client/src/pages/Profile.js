@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Image, Message } from 'semantic-ui-react';
 import { Redirect, useParams } from 'react-router-dom';
-import Nav from '../components/Nav';
+import Nav from '../components/UserNav';
 ////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
 
 import PostFeed from '../components/PostFeed';

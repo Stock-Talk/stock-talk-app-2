@@ -9,14 +9,13 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-
+import './Register.css';
+import Logo from '../images/Logo.png';
+import Nav from '../components/Nav';
 ////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
 // import { useMutation } from '@apollo/react-hooks';
 // import Auth from "../utils/auth";
 // import { ADD_USER } from "../utils/mutations";
-
-import './Register.css';
-import Logo from '../images/Logo.png';
 
 function Register(props) {
   const [user, setUser] = useState({
@@ -50,63 +49,70 @@ function Register(props) {
   };
 
   return (
-    <Grid textAlign='center' style={{ height: '70vh' }} verticalAlign='middle'>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center' id='hdrtitle'>
-          <Image src={Logo} /> Create your account
-        </Header>
-        {/* unquote {register} */}
-        <Form onSubmit='{register}' size='large'>
-          <Segment stacked>
-            <Form.Input
-              fluid
-              icon='user'
-              iconPosition='left'
-              name='username'
-              placeholder='Username'
-              value={user.username}
-              onChange={handleChange}
-            />
-            <Form.Input
-              fluid
-              icon='user'
-              iconPosition='left'
-              name='email'
-              placeholder='E-mail address'
-              value={user.email}
-              onChange={handleChange}
-            />
-            <Form.Input
-              fluid
-              icon='lock'
-              iconPosition='left'
-              name='password'
-              placeholder='Password'
-              type='password'
-              value={user.password}
-              onChange={handleChange}
-            />
-            <Form.Input
-              fluid
-              icon='lock'
-              iconPosition='left'
-              name='confirmpassword'
-              placeholder='Confirm Password'
-              type='password'
-              value={user.confirmPassword}
-              onChange={handleChange}
-            />
+    <div>
+      <Nav />
+      <Grid
+        textAlign='center'
+        style={{ height: '70vh' }}
+        verticalAlign='middle'
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <Header as='h2' color='teal' textAlign='center' id='hdrtitle'>
+            <Image src={Logo} /> Create your account
+          </Header>
+          {/* unquote {register} */}
+          <Form onSubmit='{register}' size='large'>
+            <Segment stacked>
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
+                name='username'
+                placeholder='Username'
+                value={user.username}
+                onChange={handleChange}
+              />
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
+                name='email'
+                placeholder='E-mail address'
+                value={user.email}
+                onChange={handleChange}
+              />
+              <Form.Input
+                fluid
+                icon='lock'
+                iconPosition='left'
+                name='password'
+                placeholder='Password'
+                type='password'
+                value={user.password}
+                onChange={handleChange}
+              />
+              <Form.Input
+                fluid
+                icon='lock'
+                iconPosition='left'
+                name='confirmpassword'
+                placeholder='Confirm Password'
+                type='password'
+                value={user.confirmPassword}
+                onChange={handleChange}
+              />
 
-            <Button color='teal' fluid size='large' id='registerbtn'>
-              Register
-            </Button>
-          </Segment>
-        </Form>
-        <Message>
-          Already have an account? <Link to='/login'>Login</Link>
-        </Message>
-      </Grid.Column>
-    </Grid>
+              <Button color='teal' fluid size='large' id='registerbtn'>
+                Register
+              </Button>
+            </Segment>
+          </Form>
+          <Message>
+            Already have an account? <Link to='/login'>Login</Link>
+          </Message>
+        </Grid.Column>
+      </Grid>
+    </div>
   );
 }
 

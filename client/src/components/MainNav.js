@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // navigation for main page
 
-function MainNav() {
+function Nav() {
   // set page pathname
   const pathname = window.location.pathname;
   const path = pathname === '/' ? 'home' : pathname.substring(1);
@@ -16,7 +16,7 @@ function MainNav() {
   // If user is not logged in
   if (true) {
     return (
-      <div>
+      <div className='container' style={{ marginTop: 10 }}>
         <Menu pointing secondary size='large' color='red'>
           <Menu.Menu position='right'>
             <Menu.Item
@@ -43,4 +43,4 @@ function MainNav() {
   }
 }
 
-export default MainNav;
+export default Nav;

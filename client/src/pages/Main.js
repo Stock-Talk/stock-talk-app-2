@@ -2,6 +2,7 @@ import React from 'react';
 import './Main.css';
 import MainNav from '../components/MainNav';
 import Mainpage from '../images/Mainpage.png';
+import { Link } from 'react-router-dom';
 import { Image } from 'semantic-ui-react';
 
 const Main = () => (
@@ -9,10 +10,10 @@ const Main = () => (
     <MainNav />
     <Image
       src={Mainpage}
-      as='a'
+      as={Link}
+      to='./about'
       size='extra-large'
-      href='/login'
-      target='_blank'
+      atl='about navigation'
     />
   </div>
 );
