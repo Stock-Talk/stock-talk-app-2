@@ -10,7 +10,7 @@ import {
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-// NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT
+////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
 // import { useMutation } from '@apollo/react-hooks';
 // import Auth from "../utils/auth";
 // import { ADD_USER } from "../utils/mutations";
@@ -27,19 +27,19 @@ function Register(props) {
   });
   // const [addUser] = useMutation(ADD_USER);
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        username: user.username,
-        email: user.email,
-        password: user.password,
-        confirmPassword: user.confirmPassword,
-      },
-    });
-    // const token = mutationResponse.data.addUser.token;
-    // Auth.login(token);
-  };
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const mutationResponse = await addUser({
+  //     variables: {
+  //       username: user.username,
+  //       email: user.email,
+  //       password: user.password,
+  //       confirmPassword: user.confirmPassword,
+  //     },
+  //   });
+  // const token = mutationResponse.data.addUser.token;
+  // Auth.login(token);
+  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -55,7 +55,8 @@ function Register(props) {
         <Header as='h2' color='teal' textAlign='center' id='hdrtitle'>
           <Image src={Logo} /> Create your account
         </Header>
-        <Form onSubmit={register} size='large'>
+        {/* unquote {register} */}
+        <Form onSubmit='{register}' size='large'>
           <Segment stacked>
             <Form.Input
               fluid

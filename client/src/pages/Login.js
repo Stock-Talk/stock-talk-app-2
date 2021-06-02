@@ -9,7 +9,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-// NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT
+////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
 // import { useMutation } from '@apollo/react-hooks';
 // import { Link } from "react-router-dom";
 // import { LOGIN } from "../utils/mutations"
