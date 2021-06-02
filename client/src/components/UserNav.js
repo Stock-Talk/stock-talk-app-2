@@ -15,7 +15,7 @@ function Nav() {
   // If user is not logged in
   if (true) {
     return (
-      <div>
+      <div className='container' style={{ marginTop: 20 }}>
         {/* TODO  -  set to HOME when user is logged in */}
         <Menu pointing secondary size='large' color='red'>
           <Menu.Item
