@@ -3,7 +3,7 @@ import './Main.css'
 import Aboutpng from '../images/About.png'
 import { Image } from 'semantic-ui-react'
 
-const Main = () => (
+const About = () => (
   <Image
     src={Aboutpng}
     as='a'
@@ -14,4 +14,4 @@ const Main = () => (
 )
 
 
-export default Main;
+export default About;
