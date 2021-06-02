@@ -1,6 +1,9 @@
 import React from 'react';
 import { Form, TextArea, Modal, Button } from 'semantic-ui-react';
 
+// TODO
+// need logic to capture user input to send post body, username to backend
+
 function PostForm() {
   const [open, setOpen] = React.useState(false);
 

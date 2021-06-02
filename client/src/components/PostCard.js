@@ -4,8 +4,8 @@ import PostType from './PostType';
 
 //// TODO:
 //    add logic to pull date post is created
-//    add logic to pull username & postText
-//    add logic to pull user avatar (Later)
+//    add logic to pull username & post body
+//    add logic to pull user avatar (Later feature)
 
 function PostCard() {
   return (
@@ -19,18 +19,23 @@ function PostCard() {
           />
           <Card.Header>username here</Card.Header>
           <Card.Meta>createdAt</Card.Meta>
-          {/*  insert PostType here... see component for details */}
-          <PostType />
+          {/*  PostType goes here from Component*/}
+          <Card.Description name='text'>
+            POST TEXT HERE Maxime mollitia, molestiae quas vel sint commodi
+            repudiandae consequuntur voluptatum laborum numquam blanditiis harum
+            quisquam eius sed odit fugiat.
+          </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Button as='div' labelPosition='right'>
+          {/* DONT HAVE THIS FEATURE YET */}
+          {/* <Button as='div' labelPosition='right'>
             <Button color='orange'>
               <Icon className='thumbs up' />
             </Button>
             <Label as='a' basic color='orange' pointing='left'>
               48 display likeCount
             </Label>
-          </Button>
+          </Button> */}
           <Button as='div' labelPosition='right'>
             <Button basic color='blue'>
               <Icon className='comments' />

@@ -15,6 +15,7 @@ function PostFeed() {
       <Feed align='center'>
         <Feed.Event>
           <Feed.Content>
+            {/*  PostCard Component*/}
             <PostCard />
           </Feed.Content>
         </Feed.Event>
@@ -25,6 +26,7 @@ function PostFeed() {
       <Feed align='center'>
         <Feed.Event>
           <Feed.Content>
+            {/*  PostCard Component*/}
             <PostCard />
           </Feed.Content>
         </Feed.Event>

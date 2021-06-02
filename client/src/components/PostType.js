@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
 
+/////// IGNORE THIS FOR NOW, DONT NEED FOR PRESENTATION
 /////// TODO:
 //      if post type is text return Card.Descrition with name=text !this is okay for now
 //      if post type is link return Card.Descrition with name=link
