@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid, Header } from 'semantic-ui-react';
+import { Button, Grid, Header } from 'semantic-ui-react';
 import './HomeContent.css';
 import Feed from './PostFeed';
+import PostForm from '../components/PostForm';
 
 // if user is new OR returnig user with no friends, RETURN feed only
 // else RETURN feedAndFriends
@@ -18,7 +19,10 @@ const HomeContent = () => {
 
       <Grid.Row className='no-section-content'>
         <Grid.Column floated='right' className='home-feed' width={16}>
-          {/* feed here */}
+          <Button>
+            <PostForm />
+          </Button>
+
           <Feed />
         </Grid.Column>
       </Grid.Row>
