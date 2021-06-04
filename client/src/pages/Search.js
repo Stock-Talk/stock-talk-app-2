@@ -1,98 +1,84 @@
-import _ from 'lodash';
-import faker from 'faker';
-import React from 'react';
-import { Search, Grid, Header, Segment, Label } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-const source = _.times(5, () => ({
-  title: faker.company.companyName(),
-  description: faker.company.catchPhrase(),
-  image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, '$'),
-}));
+import Logo from '../images/Logo.png';
+import SideNav from '../components/Sidebar';
+import SearchContent from '../components/SearchContent';
 
-const initialState = {
-  loading: false,
-  results: [],
-  value: '',
-};
-
-function exampleReducer(state, action) {
+function sidebarReducer(state, action) {
   switch (action.type) {
-    case 'CLEAN_QUERY':
-      return initialState;
-    case 'START_SEARCH':
-      return { ...state, loading: true, value: action.query };
-    case 'FINISH_SEARCH':
-      return { ...state, loading: false, results: action.results };
-    case 'UPDATE_SELECTION':
-      return { ...state, value: action.selection };
-
+    case 'CHANGE_ANIMATION':
+      return { ...state, animation: action.animation, visible: !state.visible };
+    case 'CHANGE_DIMMED':
+      return { ...state, dimmed: action.dimmed };
+    case 'CHANGE_DIRECTION':
+      return { ...state, direction: action.direction, visible: false };
     default:
       throw new Error();
   }
 }
 
-const resultRenderer = ({ title }) => <Label content={title} />;
+function Search() {
+  const [state, dispatch] = React.useReducer(sidebarReducer, {
+    animation: 'overlay',
+    direction: 'left',
+    dimmed: true,
+    visible: false,
+  });
 
-function SearchCapture() {
-  const [state, dispatch] = React.useReducer(exampleReducer, initialState);
-  const { loading, results, value } = state;
+  const { animation, dimmed, direction, visible } = state;
+  const vertical = direction === 'bottom' || direction === 'top';
 
-  const timeoutRef = React.useRef();
-  const handleSearchChange = React.useCallback((e, data) => {
-    clearTimeout(timeoutRef.current);
-    dispatch({ type: 'START_SEARCH', query: data.value });
+  // set link pathname
+  const pathname = window.location.pathname;
+  const path = pathname === '/' ? 'home' : pathname.substring(1);
+  const [activeItem, setActiveItem] = useState(path);
 
-    timeoutRef.current = setTimeout(() => {
-      if (data.value.length === 0) {
-        dispatch({ type: 'CLEAN_QUERY' });
-        return;
-      }
-
-      const re = new RegExp(_.escapeRegExp(data.value), 'i');
-      const isMatch = (result) => re.test(result.title);
-
-      dispatch({
-        type: 'FINISH_SEARCH',
-        results: _.filter(source, isMatch),
-      });
-    }, 300);
-  }, []);
-  React.useEffect(() => {
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
-  }, []);
+  // set event to to change `name` of link to active
+  const handleItemClick = (e, { name }) => setActiveItem(name);
 
   return (
-    <Grid>
-      <Grid.Column width={6}>
-        <Search
-          loading={loading}
-          onResultSelect={(e, data) =>
-            dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
+    <div className='container' style={{ marginTop: 30 }}>
+      <Menu pointing secondary size='large' color='red'>
+        {/* TEST PAGE.. WILL DELETE THIS MENU ITEM */}
+        <Menu.Item
+          className='sidebar-menu'
+          name='Menu'
+          onClick={() =>
+            dispatch({ type: 'CHANGE_ANIMATION', animation: 'overlay' })
           }
-          onSearchChange={handleSearchChange}
-          resultRenderer={resultRenderer}
-          results={results}
-          value={value}
         />
-      </Grid.Column>
+        <Menu.Menu position='right'>
+          <Menu.Item
+            className='nav-link'
+            name='logout'
+            active={activeItem === 'home'}
+            onClick={handleItemClick}
+            as={Link}
+            to='/home'
+          >
+            <img className='ui avatar image' src={Logo} alt='app-logo' />
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
 
-      <Grid.Column width={10}>
-        <Segment>
-          <Header>State</Header>
-          <pre style={{ overflowX: 'auto' }}>
-            {JSON.stringify({ loading, results, value }, null, 2)}
-          </pre>
-          <Header>Options</Header>
-          <pre style={{ overflowX: 'auto' }}>
-            {JSON.stringify(source, null, 2)}
-          </pre>
-        </Segment>
-      </Grid.Column>
-    </Grid>
+      <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
+        {!vertical && (
+          <SideNav
+            animation={animation}
+            direction={direction}
+            visible={visible}
+          />
+        )}
+
+        <Sidebar.Pusher dimmed={dimmed && visible}>
+          {/* ADD SearchContent HERE */}
+          <SearchContent />
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
+    </div>
   );
 }
 
-export default SearchCapture;
+export default Search;
