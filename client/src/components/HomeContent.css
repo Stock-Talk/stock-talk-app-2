@@ -1,19 +1,4 @@
 /* Home Content */
-/* * {
-  box-shadow: none !important;
-} */
-/* .ui {
-  background-color: transparent !important;
-} */
-/* 
-.section-header,
-.section-content,
-.friend,
-.friend-list,
-.recent-activity,
-.home-feed {
-  margin-left: 0 !important;
-} */
 
 .header {
   color: whitesmoke !important;
@@ -24,10 +9,6 @@
   background-color: transparent !important;
   border: 1px solid whitesmoke !important;
 }
-
-@media only screen and (max-width: 600px) {
-  .no-section-header,
-  .no-section-content {
-    margin: none;
-  }
+.labeled.button {
+  margin: 1em !important;
 }

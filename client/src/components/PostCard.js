@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Image, Button, Icon, Label } from 'semantic-ui-react';
 import './PostCard.css';
+import CommentForm from './CommentForm';
+import Comments from './Comments';
 
 //// TODO:
 //    add logic to pull date post is created
@@ -10,6 +12,7 @@ import './PostCard.css';
 //    for each post object in request to backend generate a card
 
 function PostCard() {
+  const [open, setOpen] = React.useState(false);
   return (
     <Card.Group centered>
       <Card fluid>
@@ -30,11 +33,19 @@ function PostCard() {
         </Card.Content>
         <Card.Content extra>
           <Button as='div' labelPosition='right'>
-            <Button basic color='blue'>
+            {/* <Button primary>
               <Icon className='comments' />
-            </Button>
+            </Button> */}
+            <Comments />
             <Label as='a' basic color='blue' pointing='left'>
-              25 diplay commentCount
+              {/*  diplay commentCount*/}
+              25
+            </Label>
+          </Button>
+          <Button as='div' labelPosition='right'>
+            <CommentForm />
+            <Label as='a' basic color='blue' background='blue'>
+              <Icon className='pencil' />
             </Label>
           </Button>
         </Card.Content>
