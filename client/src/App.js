@@ -11,11 +11,16 @@ import Register from './pages/Register';
 import About from './pages/About';
 import Main from './pages/Main';
 
+import Test from './pages/Test';
+
 function App() {
   return (
     <Router>
       <Container>
         <Route exact path='/' component={Main} />
+        {/* delete the following route after testing */}
+        <Route exact path='/test' component={Test} />
+
         <Route exact path='/home' component={Home} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/login' component={Login} />

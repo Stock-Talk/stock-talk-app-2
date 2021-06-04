@@ -5,7 +5,7 @@ import PostFeed from './PostFeed';
 
 //// DONT WORRY ABOUT THIS FOR NOW THIS IS FUTURE FEATURE DONT NEED FOR PRESENTATION
 
-function RecentContributors() {
+function RecentActivity() {
   //// TODO: logic to provide username and time of most recent activity
   //// if they person has not posted set deafult to person `has not posted recently`
 
@@ -73,4 +73,4 @@ function RecentContributors() {
   );
 }
 
-export default RecentContributors;
+export default RecentActivity;
