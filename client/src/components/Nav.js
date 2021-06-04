@@ -17,7 +17,7 @@ function Nav() {
   // If user is not logged in
   if (true) {
     return (
-      <div className='container' style={{ marginTop: 20 }}>
+      <div className='container' style={{ marginTop: 30 }}>
         <Menu pointing secondary size='large' color='red'>
           <Menu.Item
             className='nav-link'

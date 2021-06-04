@@ -3,11 +3,10 @@ import { Feed } from 'semantic-ui-react';
 import PostCard from './PostCard';
 
 //// TODO:
-//    add logic pull all single user posts return userFeed
+
 //    add logic to pull all my posts return myFeed
 
 function PostFeed() {
-  // const userFeed = userFeed;
   // const myFeed = myFeed;
 
   if (true) {
@@ -17,16 +16,6 @@ function PostFeed() {
           <Feed.Content>
             {/*  PostCard Component*/}
             <PostCard />
-          </Feed.Content>
-        </Feed.Event>
-      </Feed>
-    );
-  } else {
-    return (
-      <Feed align='center'>
-        <Feed.Event>
-          <Feed.Content>
-            {/*  PostCard Component*/}
             <PostCard />
           </Feed.Content>
         </Feed.Event>

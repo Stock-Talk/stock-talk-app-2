@@ -16,8 +16,18 @@ function Nav() {
   // If user is not logged in
   if (true) {
     return (
-      <div className='container' style={{ marginTop: 20 }}>
+      <div className='container' style={{ marginTop: 30 }}>
         <Menu pointing secondary size='large' color='red'>
+          {/* TEST PAGE.. WILL DELETE THIS MENU ITEM */}
+          <Menu.Item
+            className='nav-link'
+            name='hometest'
+            active={activeItem === 'hometest'}
+            onClick={handleItemClick}
+            as={Link}
+            to='/test'
+          />
+
           <Menu.Menu position='right'>
             <Menu.Item
               className='nav-link'

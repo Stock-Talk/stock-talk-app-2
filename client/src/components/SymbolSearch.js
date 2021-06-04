@@ -20,9 +20,6 @@ function SymbolSearch() {
     }, [url])
 
     if (stock) {   
-        // console.log(stock + " line 23");
-        // console.log(stock.symbol + " line 24");
-        // console.log(stock.historical[0].date + " line 25");
         content =  
             <div>
                 <h1>stock image is {stock.historical[0].image}</h1>
@@ -31,7 +28,6 @@ function SymbolSearch() {
                 <h1>closing price is {stock.historical[0].close}</h1>
                 <h1>percent change is {stock.historical[0].changePercent}%</h1>
                 <h1>change amount is {stock.historical[0].change}</h1>
-
             </div>
     }
     return(
