@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Image, Button, Icon, Label } from 'semantic-ui-react';
-import PostType from './PostType';
+import './PostCard.css';
 
 //// TODO:
 //    add logic to pull date post is created
 //    add logic to pull username & post body
 //    add logic to pull user avatar (Later feature)
+
+//    for each post object in request to backend generate a card
 
 function PostCard() {
   return (
@@ -19,7 +21,6 @@ function PostCard() {
           />
           <Card.Header>username here</Card.Header>
           <Card.Meta>createdAt</Card.Meta>
-          {/*  PostType goes here from Component*/}
           <Card.Description name='text'>
             POST TEXT HERE Maxime mollitia, molestiae quas vel sint commodi
             repudiandae consequuntur voluptatum laborum numquam blanditiis harum
@@ -27,15 +28,6 @@ function PostCard() {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          {/* DONT HAVE THIS FEATURE YET */}
-          {/* <Button as='div' labelPosition='right'>
-            <Button color='orange'>
-              <Icon className='thumbs up' />
-            </Button>
-            <Label as='a' basic color='orange' pointing='left'>
-              48 display likeCount
-            </Label>
-          </Button> */}
           <Button as='div' labelPosition='right'>
             <Button basic color='blue'>
               <Icon className='comments' />

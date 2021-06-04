@@ -2,7 +2,12 @@ import _ from 'lodash';
 import faker from 'faker';
 import React from 'react';
 import { Search, Grid, Header, Segment, Label } from 'semantic-ui-react';
-import Nav from '../components/UserNav';
+
+// this is the logic that captures search value='' in order to send fetch request to api
+
+// the json results will render in the second column of the returned grid
+
+// this is exported to search page
 
 const source = _.times(5, () => ({
   title: faker.company.companyName(),

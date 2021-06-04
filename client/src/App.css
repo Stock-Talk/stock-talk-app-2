@@ -20,29 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* NAVIGATION ITEMS */
-.nav-link,
-.sidebar-menu {
-  color: whitesmoke !important;
-}
-
-.nav-icon:hover,
-.sidebar-menu:hover {
-  color: #ec4a4a !important;
-}
-.nav-link:active,
-.nav-icon:active,
-.sidebar-menu:active {
-  color: #e87f00 !important;
-}
-.nav-link,
-.pushable {
-  border: none !important;
-}
-.sidebar {
-  border-left: 1px solid#ec4a4a !important;
-}
-
 /* Home Content */
 /* .ui {
   background-color: transparent !important;

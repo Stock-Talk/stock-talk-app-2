@@ -12,7 +12,7 @@ import About from './pages/About';
 import Main from './pages/Main';
 
 import Test from './pages/Test';
-import SearchCapture from './pages/Search';
+import Search from './pages/Search';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route exact path='/' component={Main} />
         {/* delete the following route after testing */}
         <Route exact path='/test' component={Test} />
-        <Route exact path='/search' component={SearchCapture} />
+        <Route exact path='/search' component={Search} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/profile' component={Profile} />
         <Route exact path='/login' component={Login} />

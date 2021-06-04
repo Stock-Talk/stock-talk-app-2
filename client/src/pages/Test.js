@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Header, Image, Icon, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Header, Image, Grid, Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../images/Logo.png';
 import SideNav from '../components/Sidebar';
+import HomeContent from '../components/HomeContent';
 
 function sidebarReducer(state, action) {
   switch (action.type) {
@@ -18,7 +19,7 @@ function sidebarReducer(state, action) {
   }
 }
 
-function Test() {
+function Home() {
   const [state, dispatch] = React.useReducer(sidebarReducer, {
     animation: 'overlay',
     direction: 'left',
@@ -57,12 +58,7 @@ function Test() {
             as={Link}
             to='/home'
           >
-            <img
-              className='ui avatar image'
-              // style={{ marginTop: 15 }}
-              src={Logo}
-              alt='app-logo'
-            />
+            <img className='ui avatar image' src={Logo} alt='app-logo' />
           </Menu.Item>
         </Menu.Menu>
       </Menu>
@@ -77,14 +73,12 @@ function Test() {
         )}
 
         <Sidebar.Pusher dimmed={dimmed && visible}>
-          <Segment>
-            <Header as='h3'>Application Content</Header>
-            <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-          </Segment>
+          {/* Add ProfileContent HERE */}
+          {/* <ProfileContent /> */}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </div>
   );
 }
 
-export default Test;
+export default Home;

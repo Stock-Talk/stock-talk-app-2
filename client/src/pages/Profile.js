@@ -1,84 +1,83 @@
-import React from 'react';
-import { Grid, Image, Message } from 'semantic-ui-react';
-import { Redirect, useParams } from 'react-router-dom';
-import Nav from '../components/UserNav';
-////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
+import React, { useState } from 'react';
+import { Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
-import PostFeed from '../components/MyPostFeed';
-import PostForm from '../components/PostForm';
-// import { useQuery, useMutation } from '@apollo/react-hooks';
-// import { QUERY_USER, QUERY_ME } from '../utils/queries';
-// import { ADD_FRIEND } from '../utils/mutations';
-// import Auth from '../utils/auth';
+import Logo from '../images/Logo.png';
+import SideNav from '../components/Sidebar';
+import ProfileContent from '../components/ProfileContent';
 
-const Profile = (props) => {
-  const { username: userParam } = useParams();
+function sidebarReducer(state, action) {
+  switch (action.type) {
+    case 'CHANGE_ANIMATION':
+      return { ...state, animation: action.animation, visible: !state.visible };
+    case 'CHANGE_DIMMED':
+      return { ...state, dimmed: action.dimmed };
+    case 'CHANGE_DIRECTION':
+      return { ...state, direction: action.direction, visible: false };
+    default:
+      throw new Error();
+  }
+}
 
-  // const [addFriend] = useMutation(ADD_FRIEND);
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-  //   variables: { username: userParam },
-  // });
+function Profile() {
+  const [state, dispatch] = React.useReducer(sidebarReducer, {
+    animation: 'overlay',
+    direction: 'left',
+    dimmed: true,
+    visible: false,
+  });
 
-  // const user = data?.me || data?.user || {};
+  const { animation, dimmed, direction, visible } = state;
+  const vertical = direction === 'bottom' || direction === 'top';
 
-  // // Redirect to profile page if username is yours
-  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-  //   return <Redirect to='/profile' />;
-  // }
+  // set link pathname
+  const pathname = window.location.pathname;
+  const path = pathname === '/home' ? 'home' : pathname.substring(1);
+  const [activeItem, setActiveItem] = useState(path);
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (!user?.username) {
-  //   return (
-  //     <h4>
-  //       You need to be logged in to see this. Use the navigation links above to
-  //       sign up or log in!
-  //     </h4>
-  //   );
-  // }
-
-  // const handleClick = async () => {
-  //   try {
-  //     await addFriend({
-  //       variables: { id: user._id },
-  //     });
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
+  // set event to to change `name` of link to active
+  const handleItemClick = (e, { name }) => setActiveItem(name);
 
   return (
-    <div>
-      <Nav />
-      <Grid celled stackable centered>
-        {/* Viewing {userParam ? `${user.username}'s` : 'your'} profile. */}
-        <h2>Your Profile</h2>
-        <Grid.Row>
-          <Grid.Column className='top-left' width={3}>
-            {/* <RecentActivity /> */}
-            recent activity
-          </Grid.Column>
-          <Grid.Column className='center-top' width={3}>
-            <PostForm />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column className='bottom-left' width={3}></Grid.Column>
-          <Grid.Column className='center-bottom' width={10}>
-            {/* PostFeed for all my posts */}
-            <PostFeed />
-          </Grid.Column>
-          <Grid.Column className='bottom-right' width={3}>
-            {/* import friends list here - comment out while i work on component  */}
-            {/* <FriendList /> */}
-            Friends/Team members (what's the min?)
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+    <div className='container' style={{ marginTop: 30 }}>
+      <Menu pointing secondary size='large' color='red'>
+        <Menu.Item
+          className='sidebar-menu'
+          name='Menu'
+          onClick={() =>
+            dispatch({ type: 'CHANGE_ANIMATION', animation: 'overlay' })
+          }
+        />
+        <Menu.Menu position='right'>
+          <Menu.Item
+            className='nav-link'
+            name='logout'
+            active={activeItem === 'home'}
+            onClick={handleItemClick}
+            as={Link}
+            to='/home'
+          >
+            <img className='ui avatar image' src={Logo} alt='app-logo' />
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
+
+      <Sidebar.Pushable as={Segment} style={{ overflow: 'hidden' }}>
+        {!vertical && (
+          <SideNav
+            animation={animation}
+            direction={direction}
+            visible={visible}
+          />
+        )}
+
+        <Sidebar.Pusher dimmed={dimmed && visible}>
+          {/* ADD ProfileCONTENT HERE */}
+          <ProfileContent />
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
     </div>
   );
-};
+}
 
 export default Profile;

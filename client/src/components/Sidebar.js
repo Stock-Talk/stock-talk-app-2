@@ -3,7 +3,7 @@ import { Icon, Menu, Sidebar } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
-//import SearchModal from './SearchModal'
+// this are the navigation paths logic for the internal pages when user is logged in
 
 const SideNav = ({ animation, direction, visible }) => {
   // set page pathname

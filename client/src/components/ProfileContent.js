@@ -1,13 +1,13 @@
 import React from 'react';
 import { Grid, Header } from 'semantic-ui-react';
-import './HomeContent.css';
+// import './ProfileContent.css';
 import Feed from './PostFeed';
 
-// if user is new OR returnig user with no friends, RETURN feed only
-// else RETURN feedAndFriends
+// if user is new OR has not made posts, RETURN button
+// else RETURN feed and button
 
-const HomeContent = () => {
-  // feed only
+const ProfileContent = () => {
+  // button only
   return (
     <Grid celled='internally'>
       <Grid.Row className='no-section-header'>
@@ -24,7 +24,7 @@ const HomeContent = () => {
       </Grid.Row>
     </Grid>
   );
-  // feed and friends
+  // button and feed
   return (
     <Grid celled='internally'>
       <Grid.Row className='section-header'>
@@ -51,4 +51,4 @@ const HomeContent = () => {
   );
 };
 
-export default HomeContent;
+export default ProfileContent;

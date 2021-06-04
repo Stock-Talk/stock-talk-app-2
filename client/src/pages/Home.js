@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Header, Image, Grid, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Menu, Segment, Sidebar } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../images/Logo.png';
