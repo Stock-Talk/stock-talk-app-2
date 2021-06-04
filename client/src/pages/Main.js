@@ -17,7 +17,7 @@ import About from '../images/fixedabout.png'
 // )
 
 const Main = () => (
-    <Reveal animated='move up'>
+    <Reveal animated='small fade'>
         <Reveal.Content visible>
             <Image circular size='extra-large' src={Mainpage} />
         </Reveal.Content>
