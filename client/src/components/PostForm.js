@@ -13,7 +13,11 @@ function PostForm() {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button>Create a Post!</Button>}
+      trigger={
+        <Button className='post-btn' size='medium'>
+          Create a Post!
+        </Button>
+      }
     >
       <Modal.Header>Create a Post</Modal.Header>
       <Modal.Content Form>

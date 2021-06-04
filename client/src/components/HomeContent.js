@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Grid, Header } from 'semantic-ui-react';
+import { Button, Grid, Header, Icon } from 'semantic-ui-react';
 import Feed from './PostFeed';
 import CreatePost from './PostForm';
 
@@ -10,17 +10,19 @@ const HomeContent = () => {
     <div>
       <Grid celled='internally' stackable>
         <Grid.Row className='no-section-header'>
-          <Grid.Column floated='right' className='recent-activity' width={5}>
-            <Header textAlign='center'>Recent Activity</Header>
+          <Grid.Column floated='right' className='recent-activity' width={16}>
+            <Header className='' textAlign='center'>
+              Recent Activity
+            </Header>
           </Grid.Column>
         </Grid.Row>
 
         <Grid.Row className='no-section-content'>
-          <Grid.Column floated='right' className='home-feed' width={5}>
-            <Button>
-              {/* PostForm component */}
-              <CreatePost />
-            </Button>
+          <Grid.Column floated='right' className='home-feed' width={16}>
+            {/* <Button size='small'> */}
+            {/* PostForm component */}
+            <CreatePost />
+            {/* </Button> */}
             {/* Feed component */}
             <Feed />
           </Grid.Column>

@@ -24,7 +24,7 @@ function UserNav() {
           as={Link}
           to='/home'
         >
-          <Icon name='home' />
+          {/* <Icon name='home' /> */}
         </Menu.Item>
 
         <Menu.Item

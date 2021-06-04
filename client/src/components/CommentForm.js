@@ -13,7 +13,11 @@ function CommentForm() {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button primary>Comment</Button>}
+      trigger={
+        <Button className='comment-btn' primary>
+          Comment
+        </Button>
+      }
     >
       <Modal.Header>Post a Comment</Modal.Header>
       <Modal.Content Form>
