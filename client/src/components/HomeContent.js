@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Grid, Header, Icon } from 'semantic-ui-react';
+import { Grid, Header } from 'semantic-ui-react';
 import Feed from './PostFeed';
 import CreatePost from './PostForm';
+import './HomeContent.css';
 
 // if user is new OR returning dsisplay most recent posts
 
@@ -9,20 +10,19 @@ const HomeContent = () => {
   return (
     <div>
       <Grid celled='internally' stackable>
-        <Grid.Row className='no-section-header'>
+        <Grid.Row className='section-header'>
           <Grid.Column floated='right' className='recent-activity' width={16}>
-            <Header className='' textAlign='center'>
-              Recent Activity
+            <Header className='page-title' textAlign='center'>
+              My Activity
             </Header>
           </Grid.Column>
         </Grid.Row>
 
-        <Grid.Row className='no-section-content'>
-          <Grid.Column floated='right' className='home-feed' width={16}>
-            {/* <Button size='small'> */}
-            {/* PostForm component */}
+        <Grid.Row className='section-content'>
+          <Grid.Column floated='right' className='feed home-feed' width={16}>
+            {/* Button to create post in PostForm component */}
             <CreatePost />
-            {/* </Button> */}
+
             {/* Feed component */}
             <Feed />
           </Grid.Column>

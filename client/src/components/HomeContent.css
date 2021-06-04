@@ -1,11 +1,9 @@
 /* Home Content */
-
-.header {
+.page-title {
   color: whitesmoke !important;
 }
 
-.section-content,
-.home-feed {
-  background-color: transparent !important;
-  border: 1px solid whitesmoke !important;
+.ui.center.aligned.header,
+.ui.centered.header {
+  box-shadow: none !important;
 }

@@ -12,13 +12,15 @@ const ProfileContent = () => {
       <Grid celled='internally'>
         <Grid.Row className='no-section-header'>
           <Grid.Column floated='right' className='recent-activity' width={16}>
-            <Header textAlign='center'>Recent Activity</Header>
+            <Header className='page-title' textAlign='center'>
+              Recent Activity
+            </Header>
           </Grid.Column>
         </Grid.Row>
 
         <Grid.Row className='no-section-content'>
           <Grid.Column floated='right' className='home-feed' width={16}>
-            {/* feed here */}
+            {/* Feed component */}
             <Feed />
           </Grid.Column>
         </Grid.Row>

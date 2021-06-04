@@ -32,19 +32,23 @@ function PostCard() {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Button as='div' labelPosition='right'>
-            {/* <Button primary>
-              <Icon className='comments' />
-            </Button> */}
+          <Button id='buttons' as='div' labelPosition='right'>
+            {/* comments button */}
             <Comments />
-            <Label as='a' basic color='blue' pointing='left'>
+            <Label
+              className='comments-label'
+              as='a'
+              basic
+              color='blue'
+              pointing='left'
+            >
               {/*  diplay commentCount*/}
               25
             </Label>
           </Button>
           <Button as='div' labelPosition='right'>
             <CommentForm />
-            <Label as='a' basic color='blue' background='blue'>
+            <Label className='comment-label' as='a' basic>
               <Icon className='pencil' />
             </Label>
           </Button>

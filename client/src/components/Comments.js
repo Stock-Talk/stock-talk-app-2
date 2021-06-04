@@ -9,7 +9,7 @@ function DisplayComments() {
       onOpen={() => setOpen(true)}
       open={open}
       trigger={
-        <Button primary>
+        <Button className='comments-btn' primary>
           <Icon className='comments' />
         </Button>
       }
