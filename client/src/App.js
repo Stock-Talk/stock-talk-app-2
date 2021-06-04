@@ -10,7 +10,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import About from './pages/About';
 import Main from './pages/Main';
-import SymbolSearch from './components/SymbolSearch';
+import Search from './pages/Stock';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/about' component={About} />
-        <Route exact path='/stock' component={SymbolSearch} />
+        <Route exact path='/stock' component={Search} />
       </Container>
     </Router>
   );
