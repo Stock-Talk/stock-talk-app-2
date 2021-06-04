@@ -54,7 +54,7 @@ const SideNav = ({ animation, direction, visible }) => {
         active={activeItem === 'search'}
         // onClick={handleItemClick} ADD MODAL to search
         as={Link}
-        to='MODAL'
+        to='/search'
       >
         <Icon name='search' />
         Search
