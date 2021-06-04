@@ -1,0 +1,11 @@
+/* .card {
+  background-color: rgba(160, 160, 160, 0.373) !important;
+  padding: 0.5em !important;
+} */
+.ui.basic.button,
+.ui.basic.buttons .button {
+  margin: 1.2em;
+}
+/* .button:hover {
+  background: rgb(200, 36, 36) !important;
+} */

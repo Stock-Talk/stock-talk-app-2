@@ -1,15 +1,14 @@
 import React from 'react';
 import Nav from '../components/NavTwo';
-import Content from '../components/HomeContent';
+import Content from '../components/NewsContent';
 
-const Home = () => {
+function NewsPage() {
   return (
     <div>
       <Nav />
       <Content />
-      );
     </div>
   );
-};
+}
 
-export default Home;
+export default NewsPage;

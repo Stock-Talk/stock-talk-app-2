@@ -11,7 +11,6 @@ import Register from './pages/Register';
 import About from './pages/About';
 import Main from './pages/Main';
 
-import Test from './pages/Test';
 import Search from './pages/Search';
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
       <Container>
         <Route exact path='/' component={Main} />
         {/* delete the following route after testing */}
-        <Route exact path='/test' component={Test} />
+
         <Route exact path='/search' component={Search} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/profile' component={Profile} />

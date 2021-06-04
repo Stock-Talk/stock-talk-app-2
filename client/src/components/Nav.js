@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Logo from '../images/Logo.png';
-
-// navigation for About page
+import './Nav.css';
 
 function Nav() {
   // set page pathname

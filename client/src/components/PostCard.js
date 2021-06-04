@@ -14,11 +14,12 @@ function PostCard() {
     <Card.Group centered>
       <Card fluid>
         <Card.Content>
-          <Image
+          {/* dont have backend logic for avatar Yet */}
+          {/* <Image
             floated='right'
             size='mini'
             src='https://listimg.pinclipart.com/picdir/s/133-1332476_crowd-of-users-transparent-user-icon-png-clipart.png'
-          />
+          /> */}
           <Card.Header>username here</Card.Header>
           <Card.Meta>createdAt</Card.Meta>
           <Card.Description name='text'>

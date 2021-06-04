@@ -13,16 +13,10 @@ const Main = () => (
     <MainNav />
     <Reveal animated='small fade'>
       <Reveal.Content visible>
-        <Image src={MainImage} circular size='extra-large' />
+        <Image src={MainImage} circular />
       </Reveal.Content>
       <Reveal.Content hidden>
-        <Image
-          src={RevealImage}
-          circular
-          size='extra-large'
-          as={Link}
-          to='/about'
-        />
+        <Image src={RevealImage} circular as={Link} to='/about' />
       </Reveal.Content>
     </Reveal>
   </div>

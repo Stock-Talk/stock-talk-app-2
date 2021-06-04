@@ -2,10 +2,10 @@
 /* * {
   box-shadow: none !important;
 } */
-.ui {
+/* .ui {
   background-color: transparent !important;
-}
-
+} */
+/* 
 .section-header,
 .section-content,
 .friend,
@@ -13,11 +13,10 @@
 .recent-activity,
 .home-feed {
   margin-left: 0 !important;
-}
+} */
 
 .header {
   color: whitesmoke !important;
-  /* background-color: red !important; */
 }
 
 .section-content,
@@ -26,13 +25,9 @@
   border: 1px solid whitesmoke !important;
 }
 
-.no-section-header,
-.no-section-content {
-  margin: 0 10em !important;
-}
-
-.section-header,
-.no-section-header {
-  border: 1px solid whitesmoke !important;
-  background-color: black !important;
+@media only screen and (max-width: 600px) {
+  .no-section-header,
+  .no-section-content {
+    margin: none;
+  }
 }
