@@ -9,7 +9,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import Nav from '../components/Nav';
+
 import './Login.css';
 import Logo from '../images/Logo.png';
 
@@ -43,7 +43,6 @@ function Login() {
 
   return (
     <div>
-      <Nav />
       <Grid
         textAlign='center'
         style={{ height: '70vh' }}

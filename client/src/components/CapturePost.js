@@ -5,6 +5,8 @@ import { Form, TextArea, Modal, Button } from 'semantic-ui-react';
 // This is the capture form that takes in the user input text to create a post. send user and post body to backend
 // Text area value=''
 
+// if username matches post username allow delete and update post
+
 function PostForm() {
   const [open, setOpen] = React.useState(false);
 
@@ -23,20 +25,23 @@ function PostForm() {
       <Modal.Content Form>
         <Form onSubmit='undefined'>
           <Form.Group>
+            {/* why can't you type in text area */}
             <TextArea
               placeholder='What do you want to share?'
               name='postText'
-              value=''
               onChange='undefined'
               style={{ minHeight: 100 }}
             />
-
-            <Form.Button color='green' content='Submit' />
+            <Button className='submit-btn' content='submit' />
           </Form.Group>
         </Form>
       </Modal.Content>
       <Modal.Actions>
-        <Button color='gray' onClick={() => setOpen(false)}>
+        <Button
+          className='close-btn'
+          color='gray'
+          onClick={() => setOpen(false)}
+        >
           Close
         </Button>
       </Modal.Actions>

@@ -11,7 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 import './Register.css';
 import Logo from '../images/Logo.png';
-import Nav from '../components/Nav';
+
 ////////*** NEED TO SET UP FILES AND INSTALL DEPENDENCIES TO IMPORT ********
 // import { useMutation } from '@apollo/react-hooks';
 // import Auth from "../utils/auth";
@@ -50,7 +50,6 @@ function Register(props) {
 
   return (
     <div>
-      <Nav />
       <Grid
         textAlign='center'
         style={{ height: '70vh' }}
